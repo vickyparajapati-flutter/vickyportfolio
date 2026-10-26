@@ -742,12 +742,14 @@ h1, h2, h3, h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 95px;
-  height: 95px;
+  min-width: 130px;
+  padding: 1.1rem 1.4rem;
   background: var(--orange-light);
   border: 1px solid rgba(255, 90, 31, 0.25);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  text-align: center;
 }
 
 .suite-num {
@@ -756,13 +758,16 @@ h1, h2, h3, h4 {
   font-weight: 800;
   color: var(--orange-primary);
   line-height: 1;
+  margin-bottom: 0.25rem;
 }
 
 .suite-label {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   color: #9a3412;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 /* Fuel Brands Modern Grid */
