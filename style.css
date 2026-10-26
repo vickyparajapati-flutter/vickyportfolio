@@ -1081,16 +1081,17 @@ h1, h2, h3, h4 {
 
 .exp-row {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 210px 1fr;
   gap: 2.5rem;
 }
 
 .exp-dates {
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--orange-primary);
   padding-top: 0.4rem;
+  line-height: 1.5;
 }
 
 .exp-card {
