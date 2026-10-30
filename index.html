@@ -27,11 +27,11 @@
     <div class="header-inner">
       <a href="#hero" class="brand-badge">
         <span class="brand-code">&lt;VP /&gt;</span>
-        <span class="brand-status"><span class="dot-online"></span> Ready to Join</span>
+        <span class="brand-status"><span class="dot-online"></span> <span class="status-text">Ready to Join</span></span>
       </a>
 
       <nav class="nav-menu">
-        <a href="#about" class="nav-item">About</a>
+        <a href="#hero" class="nav-item">About</a>
         <a href="#smartimage" class="nav-item">pub.dev Package</a>
         <a href="#apps" class="nav-item">32+ Shipped Apps</a>
         <a href="#skills" class="nav-item">Skills</a>
@@ -39,17 +39,46 @@
       </nav>
 
       <div class="nav-cta-group">
-        <a href="#contact" class="btn btn-outline-cyan">Let's Talk</a>
-        <a href="Vicky_Parajapati_Resume_Updated.pdf" target="_blank" class="btn btn-solid-cyan download-resume-btn">
-          <i class="fa-solid fa-arrow-down"></i> Resume
+        <a href="#contact" class="btn btn-outline-cyan header-contact-btn">Let's Talk</a>
+        <a href="Vicky_Parajapati_Resume_Updated.pdf" target="_blank" class="btn btn-solid-cyan download-resume-btn header-resume-btn">
+          <i class="fa-solid fa-arrow-down"></i> <span class="resume-btn-text">Resume</span>
         </a>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-inner">
+        <nav class="mobile-nav-links">
+          <a href="#hero" class="mobile-nav-item"><i class="fa-solid fa-user"></i> About Vicky</a>
+          <a href="#smartimage" class="mobile-nav-item"><i class="fa-solid fa-box"></i> pub.dev Package</a>
+          <a href="#apps" class="mobile-nav-item"><i class="fa-solid fa-layer-group"></i> 32+ Shipped Apps</a>
+          <a href="#skills" class="mobile-nav-item"><i class="fa-solid fa-code"></i> Skills &amp; Stack</a>
+          <a href="#experience" class="mobile-nav-item"><i class="fa-solid fa-briefcase"></i> Experience</a>
+          <a href="#contact" class="mobile-nav-item"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+        </nav>
+        <div class="mobile-drawer-cta">
+          <a href="Vicky_Parajapati_Resume_Updated.pdf" target="_blank" class="btn btn-solid-cyan download-resume-btn">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline-cyan mobile-talk-btn">
+            <i class="fa-regular fa-comments"></i> Let's Talk
+          </a>
+        </div>
       </div>
     </div>
   </header>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
   <main>
     <!-- HERO SECTION: Breathtaking Visual Architecture -->
     <section class="hero-wrap" id="hero">
+      <span id="about" class="nav-anchor"></span>
       <div class="site-container hero-container">
         <div class="hero-text-block">
           <div class="verified-badge">
@@ -74,12 +103,14 @@
             <a href="Vicky_Parajapati_Resume_Updated.pdf" target="_blank" class="btn btn-glass btn-lg download-resume-btn">
               <i class="fa-solid fa-download"></i> Download Resume
             </a>
-            <a href="mailto:vickyprajapati789@gmail.com" class="btn btn-icon-round" title="Email Vicky">
-              <i class="fa-regular fa-envelope"></i>
-            </a>
-            <a href="tel:+916375521991" class="btn btn-icon-round" title="Call Vicky">
-              <i class="fa-solid fa-phone"></i>
-            </a>
+            <div class="hero-sub-actions">
+              <a href="mailto:vickyprajapati789@gmail.com" class="btn btn-icon-round" title="Email Vicky">
+                <i class="fa-regular fa-envelope"></i>
+              </a>
+              <a href="tel:+916375521991" class="btn btn-icon-round" title="Call Vicky">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+            </div>
           </div>
 
           <!-- Highlight Key Stats Row -->

@@ -55,6 +55,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Mobile Navigation Drawer Toggle & Interactions
+  const mobileNavToggle = document.getElementById('mobileNavToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-item, .mobile-drawer .btn');
+
+  function toggleMobileMenu(forceState) {
+    if (!mobileDrawer || !mobileNavToggle) return;
+    const isCurrentlyActive = mobileDrawer.classList.contains('active');
+    const shouldOpen = forceState !== undefined ? forceState : !isCurrentlyActive;
+
+    if (shouldOpen) {
+      mobileDrawer.classList.add('active');
+      mobileNavToggle.classList.add('active');
+      mobileNavToggle.setAttribute('aria-expanded', 'true');
+      if (mobileBackdrop) mobileBackdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileDrawer.classList.remove('active');
+      mobileNavToggle.classList.remove('active');
+      mobileNavToggle.setAttribute('aria-expanded', 'false');
+      if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
+    });
+  }
+
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener('click', () => {
+      toggleMobileMenu(false);
+    });
+  }
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      toggleMobileMenu(false);
+    });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('active')) {
+      toggleMobileMenu(false);
+    }
+  });
+
+  // Close mobile drawer on desktop resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 880 && mobileDrawer && mobileDrawer.classList.contains('active')) {
+      toggleMobileMenu(false);
+    }
+  });
+
   // Navbar blur on scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
